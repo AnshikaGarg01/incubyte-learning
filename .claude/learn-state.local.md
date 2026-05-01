@@ -22,4 +22,4 @@ fetch-guard/
 
 ## Current Position
 Module: 2 — TypeScript Project Setup
-Step: 2.4 — Wire up commander (TDD)
+Step: 3.1 — Write failing test for the scanner (RED)
