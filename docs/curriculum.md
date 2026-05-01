@@ -37,7 +37,7 @@ Goal: Working TypeScript project that compiles and runs, with commander wired up
 - [x] Step 2.1: Initialise the project with npm, install dependencies
 - [x] Step 2.2: Configure TypeScript (tsconfig.json)
 - [x] Step 2.3: Set up jest for TypeScript (ts-jest)
-- [ ] Step 2.4: Wire up commander — --help, --json flag, file/dir argument (TDD)
+- [x] Step 2.4: Wire up commander — --help, --json flag, file/dir argument (TDD)
 
 ## Module 3: Directory Scanner
 Goal: Given a path, return all .js/.ts files recursively.
