@@ -1,0 +1,32 @@
+  const path = require('path');
+  const { loadPlugins } = require('../../lib/plugin-loader');
+  const { lint } = require('../../lib/linter');
+
+  const noVarPlugin = path.resolve(__dirname, '../../plugins/no-var');
+
+  describe('plugin pipeline (integration)', () => {
+    it('loads a plugin and catches violations end-to-end', () => {
+      const config = { rules: { 'no-var': 'error' } };
+      const externalRules = loadPlugins([noVarPlugin]);
+      const lines = ['var x = 1;', 'const y = 2;'];
+
+      const violations = lint(lines, config, externalRules);
+
+      expect(violations).toHaveLength(1);
+      expect(violations[0]).toMatchObject({
+        line: 1,
+        message: 'Use const or let instead of var',
+        severity: 'error',
+      });
+    });
+
+    it('produces no violations when the plugin rule is not triggered', () => {
+      const config = { rules: { 'no-var': 'error' } };
+      const externalRules = loadPlugins([noVarPlugin]);
+      const lines = ['const x = 1;', 'let y = 2;'];
+
+      const violations = lint(lines, config, externalRules);
+
+      expect(violations).toHaveLength(0);
+    });
+  });

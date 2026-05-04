@@ -1,0 +1,45 @@
+{
+  "name": "fetch-guard",
+  "version": "1.0.0",
+  "description": "Detect unhandled await fetch/axios calls",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "bin": {
+    "fetch-guard": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.test.ts"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@typescript-eslint/typescript-estree": "^8.59.1",
+    "commander": "^14.0.3",
+    "fast-glob": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.9.36",
+    "@types/eslint": "^9.6.1",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.6.0",
+    "@typescript-eslint/parser": "^8.59.1",
+    "axios": "^1.15.2",
+    "eslint": "^10.2.1",
+    "jest": "^30.3.0",
+    "ts-jest": "^29.4.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  }
+}
