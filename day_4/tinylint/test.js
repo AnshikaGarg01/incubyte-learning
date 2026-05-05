@@ -5,3 +5,7 @@ var y = 2;
 process.stdout.write("Hello\n");
 process.stderr.write("Error: something went wrong\n");
 console.error("Error: something went wrong");
+
+// Next steps:
+// 1. show runtime errors on IDE
+// 2. Show fixes / suggestions for the errors

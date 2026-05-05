@@ -50,7 +50,7 @@ A minimal ESLint-inspired CLI linter built from scratch to understand how real l
 cd day_4/tinylint
 npm install
 npm test
-node bin/tinylint.js <file>
+tinlylint <file>
 ```
 
 ---
@@ -73,21 +73,3 @@ npm run build
 npm test
 node dist/cli.js <path>
 ```
-
----
-
-## Learning Themes
-
-| Theme | Days |
-|---|---|
-| Test-Driven Development (TDD) | Day 3 |
-| Framework Software Design & Tooling | Day 4 |
-| Static Analysis & AST | Day 5 |
-
----
-
-## Prerequisites
-
-- **Ruby** ≥ 2.7 (with Minitest in stdlib)
-- **Node.js** ≥ 18
-- **npm** ≥ 9
