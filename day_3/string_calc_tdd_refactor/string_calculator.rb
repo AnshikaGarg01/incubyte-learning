@@ -15,7 +15,7 @@ class StringCalculator
     end
   
     numbers.gsub!("\n", delimiter)
-    number_strings = numbers.split(Regexp.new(delimiter))
+    number_strings = numbers.split(Regexp.new(Regexp.escape(delimiter)))
     number_list = []
     negative_numbers = []
 

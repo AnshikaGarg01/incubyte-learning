@@ -48,4 +48,21 @@ class StringCalculatorTest < Minitest::Test
   def test_add_numbers_greater_than_1000_are_ignored
     assert_equal 2, @calculator.add("2,1001")
   end
+
+  def test_add_number_at_boundary_1000_is_included
+    assert_equal 1002, @calculator.add("2,1000")
+  end
+
+  def test_add_custom_delimiter_with_regex_special_char
+    assert_equal 3, @calculator.add("//.\n1.2")
+  end
+
+  def test_get_called_count_initially_zero
+    assert_equal 0, @calculator.get_called_count
+  end
+
+  def test_get_called_count_increments_on_exception
+    assert_raises(ArgumentError) { @calculator.add("-1,2") }
+    assert_equal 1, @calculator.get_called_count
+  end
 end
