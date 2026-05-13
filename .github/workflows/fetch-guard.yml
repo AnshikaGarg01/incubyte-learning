@@ -36,4 +36,4 @@ jobs:
         run: npm run build
 
       - name: Run fetch-guard on src
-        run: npx fetch-guard ./src
+        run: node ./dist/cli.js ./src
