@@ -1,0 +1,39 @@
+name: Fetch Guard CI
+
+on:
+  push:
+    paths:
+      - 'day_5/fetch-guard/**'
+      - '.github/workflows/fetch-guard.yml'
+  pull_request:
+    paths:
+      - 'day_5/fetch-guard/**'
+      - '.github/workflows/fetch-guard.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: day_5/fetch-guard
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: day_5/fetch-guard/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      - name: Run fetch-guard on src
+        run: npx fetch-guard ./src
